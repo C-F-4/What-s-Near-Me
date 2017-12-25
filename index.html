@@ -4,15 +4,34 @@
 <head>
   <meta charset="utf-8">
   <title>What's Near Me?</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta name="description" content="">
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
   <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
+  <div class="map-container">
+    <div id="map"></div>
+    <div class="search-wrapper">
+      <input type="text" placeholder="Search" id="searchBar" autocomplete="off"
+      data-bind="value: searchQuery, valueUpdate: 'keyup'" />
+      <!-- If search bar is not empty show suggestion-wrapper -->
+      <div class="suggestion-wrapper" id="suggestionBox"
+      data-bind="visible: searchResults().length > 0">
+        <div data-bind="foreach: searchResults">
+          <div class="place">
+            <span class="place-name" data-bind="text: $data"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script
   src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
@@ -21,6 +40,13 @@
   <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+  <script src="node_modules/knockout-mapping/dist/knockout.mapping.min.js"></script>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
   <script src="js/app.js"></script>
 </body>
 

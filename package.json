@@ -1,0 +1,23 @@
+{
+  "name": "what-s-near-me",
+  "version": "1.0.0",
+  "description": "Platform to get details of nearby hotspots",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C-F-4/What-s-Near-Me.git"
+  },
+  "author": "Abhinav S",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/C-F-4/What-s-Near-Me/issues"
+  },
+  "homepage": "https://github.com/C-F-4/What-s-Near-Me#readme",
+  "dependencies": {
+    "knockout-mapping": "^2.6.0",
+    "normalize.css": "^7.0.0"
+  }
+}
